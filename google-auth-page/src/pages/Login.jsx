@@ -3,9 +3,18 @@ import "./Login.css";
 import axios from "axios";
 
 function Login() {
+
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get("token");
   const handleGoogleLogin = () => {
-  window.location.href =
-    "https://copper-erasure-scurvy.ngrok-free.dev/api";
+    if (!token) {
+        alert("Invalid or missing OAuth token");
+        return;
+    }
+  
+
+    window.location.href =
+    `https://copper-erasure-scurvy.ngrok-free.dev/api?token=${token}`;
 };
 
   return (
@@ -63,6 +72,8 @@ function Login() {
         </p>
 
       </div>
+
+      <h1>https://copper-erasure-scurvy.ngrok-free.dev/api?token={token}</h1>
     </div>
   );
 }
