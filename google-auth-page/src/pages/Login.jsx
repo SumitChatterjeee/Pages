@@ -70,10 +70,7 @@ function Login() {
         <p className="signup-text">
           Don't have an account? <a href="#">Sign up</a>
         </p>
-
       </div>
-
-      <h1>https://copper-erasure-scurvy.ngrok-free.dev/api?token={token}</h1>
     </div>
   );
 }
